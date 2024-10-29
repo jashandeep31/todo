@@ -111,8 +111,8 @@ func LoginUser(c *gin.Context) {
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"name":  user.Name,
-		"email": "fa",
+		"name": user.Name,
+		"id":   user.ID,
 		// You can add more claims if needed
 	})
 	signingKey := []byte(os.Getenv("JWT_KEY"))
